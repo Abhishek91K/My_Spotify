@@ -70,21 +70,35 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: rgb(34, 34, 34);
+    height: 72px;
 }
 
-.header>* {
+.header > * {
     padding: 20px;
 }
+
+.nav{
+    display: flex;
+}
+
+.nav svg path {
+    stroke: #ffffff !important;
+        /* Force white stroke for nav icons */
+}
+
+
 
 .spotifyPlaylists {
     padding: 16px;
 }
 
-.spotifyPlaylists .cardContaimer {
+.cardContainer {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     margin: 30px;
+    max-height: 70vh;
+    overflow-y: scroll;
 }
 
 .spotifyPlaylists .card {
@@ -131,4 +145,40 @@ svg {
 svg path {
     stroke: black;
     /* Ensures the stroke is black */
+}
+
+.buttons > *{
+    margin: 0 10px;
+}
+
+.signupbtn{
+    background-color: rgb(34,34,34);
+    color: rgb(83, 83, 83);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.signupbtn:hover{
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
+
+.loginbtn{
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+    padding: 10px;
+    width: 79px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.loginbtn:hover{
+    width: 80px;
+    font-weight: bold;
+    font-size: 17px;
 }
