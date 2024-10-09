@@ -64,6 +64,7 @@ body {
 
 .right {
     margin: 16px 0;
+    position: relative;
 }
 
 .header {
@@ -181,4 +182,26 @@ svg path {
     width: 80px;
     font-weight: bold;
     font-size: 17px;
+}
+
+.playbar{
+    position: absolute;
+    bottom: 0;
+    background-color: #ece8e8;
+    width: 90%;
+    padding: 12px;
+}
+
+.songButtons{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.songList ul{
+    padding: 0 40px;
+}
+
+.songList ul li{
+    list-style-type: decimal;
 }
