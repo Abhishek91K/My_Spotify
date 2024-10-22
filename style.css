@@ -284,10 +284,31 @@ svg path {
     cursor: pointer;
 }
 
-.songInfo, .songTime{
+.songInfo{
     color: black;
     padding: 0 12px;
     width: 250px;
+}
+
+.songTime{
+    color: black;
+    padding: 0 12px;
+    width: 115px;
+}
+
+.timevol{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 13px;
+}
+
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .aboveBar{
@@ -297,7 +318,7 @@ svg path {
 }
 
 /* responsive media query */
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .left{
         position: absolute;
         left: -120%;
@@ -340,7 +361,7 @@ svg path {
     }
 
     .spotifyPlaylists .card{
-        width: 90vw;
+        width: 44vw;
     }
 
     .cardContainer{
@@ -350,5 +371,13 @@ svg path {
 
     .songInfo, .songTime{
         width: auto;
+    }
+}
+
+/* for smartphone */
+@media (max-width: 450px) {
+    .spotifyPlaylists .card {
+            width: 84vw;
+
     }
 }

@@ -68,7 +68,7 @@ async function main() {
 
     //Show all the songs in the playlist
     let songUL = document.querySelector(".songList").getElementsByTagName("ul")[0];
-    console.log(songUL);
+
     for (const song of songs) {
         songUL.innerHTML += `<li>
             <img class="invert" src="images/music.svg" alt="">
@@ -86,7 +86,6 @@ async function main() {
     //Attach an event listener to each song
     Array.from(document.querySelector(".songList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
         });
     });
@@ -106,7 +105,6 @@ async function main() {
 
     //listen for timeupdate event
     currentSong.addEventListener("timeupdate", (a) => {
-        console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songTime").innerHTML = `${convertSecondsToMinutes(currentSong.currentTime)} / ${convertSecondsToMinutes(currentSong.duration)}`;
 
         document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
@@ -131,7 +129,6 @@ async function main() {
 
     //add an event listenet to previous
     previous.addEventListener("click",()=>{
-        console.log("Previous clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         if((index-1) >= 0){
             playMusic(songs[index-1]);
@@ -140,12 +137,17 @@ async function main() {
 
     //add an event listenet to next
     next.addEventListener("click",()=>{
-        console.log("Next clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         
         if((index+1) < songs.length ){
             playMusic(songs[index+1]);
         }
+    })
+
+    //add listener to volume
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e)=>{
+        console.log("Setting volume out of 100 : " + e.target.value);
+        currentSong.volume = parseInt(e.target.value)/100;
     })
 }
 
