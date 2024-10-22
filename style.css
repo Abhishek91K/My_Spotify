@@ -87,10 +87,12 @@ body {
     /* Force white stroke for nav icons */
 }
 
-
-
 .spotifyPlaylists {
     padding: 16px;
+}
+
+.spotifyPlaylists h1 {
+    padding: 15px;
 }
 
 .cardContainer {
@@ -99,7 +101,7 @@ body {
     flex-wrap: wrap;
     margin: 30px;
     max-height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .spotifyPlaylists .card {
@@ -192,7 +194,7 @@ svg path {
     border-radius: 10px;
     width: 70vw;
     padding: 12px;
-    height: 40px;
+    min-height: 40px;
 }
 
 .songButtons {
@@ -205,6 +207,17 @@ svg path {
     height: 544px;
     overflow: auto;
     margin-bottom: 44px;
+}
+
+.hamburgerContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.hamburger, .close{
+    display: none;
 }
 
 .songList ul {
@@ -275,4 +288,57 @@ svg path {
 .aboveBar{
     display: flex;
     justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* responsive media query */
+@media (max-width: 1400px) {
+    .left{
+        position: absolute;
+        left: -120%;
+        transition: all 0.3s;
+        z-index: 1;
+        width: 370px;
+        background-color: black;
+    }
+
+    .left .close {
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 25px;
+        width: 30px;
+    }
+
+    .right{
+        width: 100vw;
+        margin: 0;
+    }
+
+    .playbar{
+        width: calc(100vw - 75px);
+    }
+
+    .seekBar{
+        width: calc(100vw - 80px);
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .aboveBar{
+        flex-direction: column;
+        align-items: center;
+        gap: 23px;
+    }
+
+    .spotifyPlaylists .card{
+        width: 90vw;
+    }
+
+    .cardContainer{
+        margin: 0;
+        justify-content: center;
+    }
 }
