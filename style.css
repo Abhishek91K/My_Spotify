@@ -242,6 +242,10 @@ svg path {
     width: 344px
 }
 
+.songList .info div {
+    word-break: break-all;
+}
+
 .playNow {
     display: flex;
     justify-content: center;
@@ -283,6 +287,7 @@ svg path {
 .songInfo, .songTime{
     color: black;
     padding: 0 12px;
+    width: 250px;
 }
 
 .aboveBar{
@@ -300,6 +305,7 @@ svg path {
         z-index: 1;
         width: 370px;
         background-color: black;
+        padding: 0;
     }
 
     .left .close {
@@ -340,5 +346,9 @@ svg path {
     .cardContainer{
         margin: 0;
         justify-content: center;
+    }
+
+    .songInfo, .songTime{
+        width: auto;
     }
 }
